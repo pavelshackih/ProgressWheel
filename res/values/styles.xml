@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ProgressStyle">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="barColor">@android:color/holo_green_dark</item>
+        <item name="barLength">20dp</item>
+        <item name="barWidth">4dp</item>
+        <item name="rimColor">@android:color/darker_gray</item>
+        <item name="rimWidth">2dp</item>
+        <item name="spinSpeed">3dp</item>
+    </style>
+
+</resources>
