@@ -18,8 +18,8 @@ public class ProgressWheelDrawable extends Drawable implements Animatable {
     private final static float OFFSET_PER_FRAME = 0.01f;
 
     //Sizes (with defaults)
-    private int layout_height = 0;
-    private int layout_width = 0;
+    private int layout_height;
+    private int layout_width;
     private int fullRadius;
     private int circleRadius;
     private int barLength;
@@ -81,6 +81,7 @@ public class ProgressWheelDrawable extends Drawable implements Animatable {
     private ProgressWheelDrawable(ProgressWheelDrawable.Builder builder) {
         setText(builder.text);
         this.textColor = builder.textColor;
+        this.textSize = builder.textSize;
         this.barColor = builder.barColor;
         this.rimColor = builder.rimColor;
         this.rimWidth = builder.rimWidth;
@@ -227,8 +228,8 @@ public class ProgressWheelDrawable extends Drawable implements Animatable {
 
         for (String s : splitText) {
             float horizontalTextOffset = textPaint.measureText(s) / 2;
-            canvas.drawText(s, bounds.right / 2 - horizontalTextOffset,
-                    bounds.bottom / 2 + verticalTextOffset, textPaint);
+            canvas.drawText(s, getBounds().width() / 2 - horizontalTextOffset,
+                    getBounds().height() / 2 + verticalTextOffset, textPaint);
         }
     }
 
@@ -263,6 +264,7 @@ public class ProgressWheelDrawable extends Drawable implements Animatable {
         } else {
             splitText = this.text.split("\n");
         }
+        invalidateSelf();
     }
 
     @Override

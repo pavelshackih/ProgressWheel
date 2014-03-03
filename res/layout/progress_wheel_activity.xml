@@ -33,12 +33,10 @@
                 android:orientation="horizontal">
 
             <ProgressBar
-                    android:visibility="gone"
                     android:layout_width="150dp"
                     android:layout_height="150dp"/>
 
             <com.todddavies.components.progressbar.ProgressWheel
-                    android:visibility="gone"
                     android:id="@+id/progressBarTwo"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
@@ -59,7 +57,6 @@
                 android:orientation="horizontal">
 
             <com.todddavies.components.progressbar.ProgressWheel
-                    android:visibility="gone"
                     android:id="@+id/progressBarThree"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
@@ -75,7 +72,6 @@
                     ProgressWheel:spinSpeed="-1dp"/>
 
             <com.todddavies.components.progressbar.ProgressWheel
-                    android:visibility="gone"
                     android:id="@+id/progressBarFour"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -92,15 +88,18 @@
 
             <com.todddavies.components.progressbar.ProgressWheelView
                     style="@style/ProgressStyle"
+                    ProgressWheel:text="Loading..."
                     android:indeterminate="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"/>
+                    android:layout_width="72dp"
+                    ProgressWheel:spinSpeed="1dp"
+                    android:layout_height="72dp"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
     <TextView
+            android:visibility="gone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

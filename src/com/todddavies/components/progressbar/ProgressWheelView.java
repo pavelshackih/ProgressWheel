@@ -28,7 +28,7 @@ public class ProgressWheelView extends ProgressBar {
     private ProgressWheelDrawable checkIndeterminateDrawable() {
         Drawable ret = getIndeterminateDrawable();
         if (ret == null || !(ret instanceof ProgressWheelDrawable))
-            throw new RuntimeException("The drawable is not a SmoothProgressDrawable");
+            throw new RuntimeException("The drawable is not a ProgressWheelDrawable");
         return (ProgressWheelDrawable) ret;
     }
 
@@ -61,7 +61,7 @@ public class ProgressWheelView extends ProgressBar {
             builder.setTextColor(a.getColor(R.styleable.ProgressWheel_textColor, 0));
         }
         if (a.hasValue(R.styleable.ProgressWheel_text)) {
-            setText(a.getString(R.styleable.ProgressWheel_text));
+            builder.setText(a.getString(R.styleable.ProgressWheel_text));
         }
         if (a.hasValue(R.styleable.ProgressWheel_rimColor)) {
             builder.setRimColor(a.getColor(R.styleable.ProgressWheel_rimColor, 0));
